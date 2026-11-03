@@ -91,7 +91,7 @@ export const pnKey = (v) => String(v || '').replace(/[^0-9A-Za-z]/g, '')
 export const EXPORT_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=xlsx`
 
 // Sheet Monitoring_Pegawai dibaca berdasarkan URUTAN KOLOM (nama header bebas):
-// A Timestamp | B Tanggal | C PN | D Nama | E Jabatan | F Jam Sebelum | G Jam Sesudah | H Perihal | I Detail | J Foto
+// A Timestamp | B Tanggal | C PN | D Nama | E Jabatan | F Jam Mulai | G Jam Selesai | H Perihal | I Detail | J Foto
 export async function loadLogs() {
   const rows = await readRaw('sheet=Monitoring_Pegawai')
   const isData = (r) => /^\d{4}-\d{1,2}-\d{1,2}|^\d{1,2}[/.-]\d{1,2}[/.-]\d{4}/.test(r[1] || '')

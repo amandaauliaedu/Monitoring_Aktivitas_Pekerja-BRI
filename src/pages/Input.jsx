@@ -50,7 +50,7 @@ export default function Input() {
   const submit = async (e) => {
     e.preventDefault()
     if (!f.pn || !f.nama) return setMsg({ t: 'err', m: 'PN dan Nama wajib diisi' })
-    if (f.mulai >= f.selesai) return setMsg({ t: 'err', m: 'Jam sesudah harus lebih besar dari jam sebelum' })
+    if (f.mulai >= f.selesai) return setMsg({ t: 'err', m: 'Jam selesai harus lebih besar dari jam mulai' })
     setBusy(true); setMsg(null)
     try {
       await post({
@@ -86,8 +86,8 @@ export default function Input() {
         {!manual && f.jabatan && <small className="chip">{f.jabatan}</small>}
         <label>Tanggal (otomatis)<input value={todayISO()} readOnly /></label>
         <div className="row2">
-          <label>Jam Sebelum<input type="time" value={f.mulai} onChange={set('mulai')} required /></label>
-          <label>Jam Sesudah<input type="time" value={f.selesai} onChange={set('selesai')} required /></label>
+          <label>Jam Mulai<input type="time" value={f.mulai} onChange={set('mulai')} required /></label>
+          <label>Jam Selesai<input type="time" value={f.selesai} onChange={set('selesai')} required /></label>
         </div>
         <label><span>Perihal Pekerjaan <b className="req">*</b></span><input value={f.perihal} onChange={set('perihal')} required /></label>
         <label><span>Penjelasan Detail Pekerjaan <b className="req">*</b></span><textarea rows={4} value={f.detail} onChange={set('detail')} required /></label>

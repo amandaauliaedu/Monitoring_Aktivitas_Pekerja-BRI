@@ -118,7 +118,8 @@ function CommentBox({ label, saved, tone, onSave }) {
       <AnimatePresence>
         {saved && (
           <motion.div key={saved} className={'saved ' + tone} initial={{ opacity: 0, y: -8 }} animate={{ opacity: 1, y: 0 }}>
-            <b>{label}</b><p>{saved}</p>
+            <b>{label}</b>
+            <ul>{toItems(saved).map((t, i) => <li key={i}>{t}</li>)}</ul>
           </motion.div>
         )}
       </AnimatePresence>
@@ -139,3 +140,6 @@ function Foto({ url }) {
     </a>
   )
 }
+
+// Di spreadsheet komentar digabung dengan ", " — di layar dipecah jadi poin-poin
+const toItems = (s) => String(s).split(/\r?\n|,\s+/).map((x) => x.replace(/^\s*[-*•]\s*/, '').trim()).filter(Boolean)

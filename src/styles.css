@@ -65,3 +65,4 @@ nav a{display:flex;align-items:center;gap:6px}.live{display:flex;align-items:cen
 .pprev div{flex:1;min-width:0}.pprev b{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.pprev small{color:#64748b}.xbtn{border:0;background:none;cursor:pointer;color:#64748b}
 .modal{position:fixed;inset:0;background:rgba(11,42,91,.7);display:grid;place-items:center;z-index:50}
 .mbox{background:#fff;border-radius:16px;padding:16px;width:min(560px,92vw);display:grid;gap:12px}.mbox video{width:100%;border-radius:10px;background:#000;max-height:60vh}
+.saved ul{margin:8px 0 0;padding-left:22px}.saved li{margin:3px 0}.saved.red>b{display:block;text-align:center;font-size:16px}
