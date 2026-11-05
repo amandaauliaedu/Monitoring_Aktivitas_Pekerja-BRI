@@ -66,3 +66,39 @@ nav a{display:flex;align-items:center;gap:6px}.live{display:flex;align-items:cen
 .modal{position:fixed;inset:0;background:rgba(11,42,91,.7);display:grid;place-items:center;z-index:50}
 .mbox{background:#fff;border-radius:16px;padding:16px;width:min(560px,92vw);display:grid;gap:12px}.mbox video{width:100%;border-radius:10px;background:#000;max-height:60vh}
 .saved ul{margin:8px 0 0;padding-left:22px}.saved li{margin:3px 0}.saved.red>b{display:block;text-align:center;font-size:16px}
+
+/* ===== Tampilan HP / tablet kecil (laptop tidak berubah) ===== */
+.tin{position:relative;display:block}.tphold{display:none}
+img,video{max-width:100%}
+@media(max-width:768px){
+  .wrap{padding:0 14px}
+  .banner{padding:10px 14px;font-size:13px}
+  .nav{position:static}
+  .navin{height:auto;flex-wrap:wrap;gap:8px 10px;padding:10px 0}
+  .brand{order:1;flex:1;min-width:0}.brand b{font-size:14px}.brand small{display:none}
+  .logo{width:36px;height:36px}
+  .live{order:2;font-size:11px}.iconbtn{order:2;width:34px;height:34px}
+  nav{order:3;flex:none;width:100%;flex-wrap:nowrap;overflow-x:auto;gap:6px;-webkit-overflow-scrolling:touch}
+  nav a{white-space:nowrap;flex-shrink:0;padding:8px 12px;font-size:14px}
+  .hero{padding:20px 0 26px;gap:18px}
+  .hero h1{font-size:34px}
+  .bigLogo{width:110px;height:110px;border-radius:26px;align-self:center;order:-1}
+  .btns .btn{flex:1 1 100%;justify-content:center}
+  .title{font-size:26px;margin:20px 0 4px}
+  .card{padding:16px;border-radius:14px}
+  .grid4{grid-template-columns:1fr 1fr;gap:10px}.num{font-size:30px;margin:6px 0}
+  input,select,textarea{font-size:16px}
+  .form{gap:14px}.row2{grid-template-columns:1fr 1fr;gap:10px}
+  input[type=time]{min-height:48px;-webkit-appearance:none;appearance:none;background:#fff}
+  .tin input.empty{color:transparent}
+  .tphold{display:block;position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#94a3b8;font-style:normal;font-size:16px;pointer-events:none}
+  .filters{grid-template-columns:1fr}
+  .whead{gap:6px 8px}.whead small{flex:1 0 100%;order:3}.pill{margin-left:auto}
+  .slot{grid-template-columns:1fr;gap:4px}
+  .arow,.ahead{grid-template-columns:1fr}
+  .foto{max-width:100%}
+  .legend{gap:8px 14px;font-size:13px}
+  .menu{min-width:200px}
+  .saved.red>b{font-size:15px}
+}
+@media(max-width:380px){.grid4{grid-template-columns:1fr}.row2{grid-template-columns:1fr}}

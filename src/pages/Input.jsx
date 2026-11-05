@@ -86,8 +86,8 @@ export default function Input() {
         {!manual && f.jabatan && <small className="chip">{f.jabatan}</small>}
         <label>Tanggal (otomatis)<input value={todayISO()} readOnly /></label>
         <div className="row2">
-          <label>Jam Mulai<input type="time" value={f.mulai} onChange={set('mulai')} required /></label>
-          <label>Jam Selesai<input type="time" value={f.selesai} onChange={set('selesai')} required /></label>
+          <label>Jam Mulai<span className="tin"><input type="time" className={f.mulai ? '' : 'empty'} value={f.mulai} onChange={set('mulai')} required />{!f.mulai && <i className="tphold">Pilih jam</i>}</span></label>
+          <label>Jam Selesai<span className="tin"><input type="time" className={f.selesai ? '' : 'empty'} value={f.selesai} onChange={set('selesai')} required />{!f.selesai && <i className="tphold">Pilih jam</i>}</span></label>
         </div>
         <label><span>Perihal Pekerjaan <b className="req">*</b></span><input value={f.perihal} onChange={set('perihal')} required /></label>
         <label><span>Penjelasan Detail Pekerjaan <b className="req">*</b></span><textarea rows={4} value={f.detail} onChange={set('detail')} required /></label>
